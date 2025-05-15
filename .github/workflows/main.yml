@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  # 1️⃣ Code Checkout + SonarQube Scan
+  # 1. SonarQube Scan
   scan:
     name: Checkout & Code Quality Scan
     runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
-  # 2️⃣ Set up AWS and Login to ECR
+  # 2 Set up AWS and Login to ECR
   setup:
     name: AWS and ECR Setup
     runs-on: ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
           aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | \
           docker login --username AWS --password-stdin ${{ secrets.ECR_REGISTRY }}
 
-  # 3️⃣ Docker Build & Push to ECR
+  # 3️ Docker Build & Push to ECR
   build-and-push:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
