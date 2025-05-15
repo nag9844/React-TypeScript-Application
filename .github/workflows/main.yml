@@ -10,7 +10,7 @@ on:
 jobs:
   # 1️⃣ Code Checkout + SonarQube Scan
   scan:
-    name: Code Quality Scan
+    name: Checkout & Code Quality Scan
     runs-on: ubuntu-latest
 
     steps:
