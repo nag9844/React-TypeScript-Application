@@ -34,7 +34,7 @@ jobs:
 
     steps:
       - name: SonarQube Quality Gate Check
-        uses: SonarSource/sonarqube-quality-gate-action@v1
+        uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
         timeout-minutes: 5 # Optional: Set a timeout for the quality gate check
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
