@@ -37,7 +37,7 @@ jobs:
   setup:
     name: AWS and ECR Setup
     runs-on: ubuntu-latest
-    needs: quality_gate # Ensure the quality gate has passed
+    needs: scan # Ensure the quality gate has passed
 
     steps:
       - name: Checkout code
