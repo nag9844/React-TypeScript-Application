@@ -1,4 +1,4 @@
-name: Sample Node.js CI/CD Pipeline
+name: Sample CI/CD Pipeline
 
 on:
   push:
